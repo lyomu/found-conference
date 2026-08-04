@@ -203,14 +203,36 @@
   .venue-chip{ background:var(--white); border:1px solid var(--line); border-radius:999px; padding:8px 16px; font-size:0.85rem; color:var(--ink-soft); }
 
   /* ---------- registration ---------- */
-  .reg-wrap{ max-width: 760px; margin:0 auto; display:grid; gap:22px; }
-  .reg-facts{ display:grid; grid-template-columns: repeat(3,1fr); gap:16px; }
-  .reg-fact{ background:var(--white); border:1px solid var(--line); border-radius:12px; padding:18px; text-align:center; }
-  .reg-fact .label{ font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--rose); font-weight:700; margin-bottom:6px; }
-  .reg-fact .value{ font-family:var(--font-display); color:var(--plum); font-size:1.1rem; }
+  .reg-wrap{ max-width: 720px; margin:0 auto; display:grid; gap:20px; }
+  .pricing-cards{ display:grid; gap:18px; margin-bottom:6px; }
+  .pricing-card{
+    background: var(--white); border: 1px solid var(--line); border-radius: 16px;
+    padding: 28px 24px; text-align: center; box-shadow: 0 4px 14px rgba(42,22,32,0.03);
+  }
+  .pricing-eyebrow{
+    font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--rose); font-weight: 700; margin-bottom: 8px;
+  }
+  .pricing-amount{
+    font-family: var(--font-display); font-size: clamp(2.1rem, 4.5vw, 2.6rem);
+    font-weight: 700; color: var(--plum); margin-bottom: 8px; line-height: 1.1;
+  }
+  .pricing-note{ color: var(--ink-soft); font-size: 0.93rem; margin: 0; }
+  .pricing-disclaimer{
+    text-align: center; color: var(--ink-soft); font-style: italic; font-size: 0.92rem;
+    margin: 4px auto 24px; line-height: 1.55; max-width: 620px;
+  }
+  .reg-steps{ list-style: none; display: grid; gap: 16px; margin-bottom: 28px; }
+  .reg-steps li{ display: flex; gap: 16px; align-items: flex-start; }
+  .step-num{
+    background: #FCE8EE; color: var(--rose); font-weight: 700; font-size: 0.88rem;
+    width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; flex-shrink: 0; margin-top: 2px;
+  }
+  .step-text{ font-size: 0.98rem; color: var(--ink); line-height: 1.5; }
   .form-slot{
-    border: 2px dashed var(--gold); border-radius:16px; padding: 40px 24px; text-align:center;
-    background: var(--white); color: var(--ink-soft); font-size:0.9rem;
+    border: 2px dashed var(--gold); border-radius: 16px; overflow: hidden;
+    background: var(--white); transition: border-color 0.3s ease;
   }
 
   /* ---------- FAQ accordion ---------- */
@@ -453,36 +475,58 @@
 <section id="register">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-eyebrow">Registration</div>
+      <div class="section-eyebrow">REGISTRATION</div>
       <h2 class="section-title">Reserve your seat</h2>
       <p class="section-lede">Registration is required and places are limited.</p>
     </div>
 
     <div class="reg-wrap">
-      <div class="reg-facts">
-        <div class="reg-fact">
-          <div class="label">Registration Fee</div>
-          <div class="value" style="font-size:1rem; line-height:1.4;">
-            <strong>KSh 1,000</strong> <span style="font-size:0.82rem; color:var(--ink-soft); font-family:var(--font-body);">(Adults)</span><br>
-            <strong>KSh 500</strong> <span style="font-size:0.82rem; color:var(--ink-soft); font-family:var(--font-body);">(Students)</span>
-          </div>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <div class="pricing-eyebrow">GENERAL</div>
+          <div class="pricing-amount">KES 1,000</div>
+          <p class="pricing-note">Pay in full, in half (KES 500 × 2), or in quarter instalments (KES 250 × 4)</p>
         </div>
-        <div class="reg-fact">
-          <div class="label">Date &amp; Time</div>
-          <div class="value" style="font-size:0.95rem; line-height:1.4;">
-            <strong>26th September 2026</strong><br>
-            <span style="font-size:0.85rem; color:var(--ink-soft); font-family:var(--font-body);">8:00 AM – 4:00 PM</span>
-          </div>
-        </div>
-        <div class="reg-fact">
-          <div class="label">Includes</div>
-          <div class="value" style="font-size:0.95rem;">Lunch, tea &amp; conference materials</div>
+
+        <div class="pricing-card">
+          <div class="pricing-eyebrow">STUDENT</div>
+          <div class="pricing-amount">KES 500</div>
+          <p class="pricing-note">Pay in full, or in half (KES 250 × 2)</p>
         </div>
       </div>
 
+      <p class="pricing-disclaimer">
+        All instalments must be completed before the conference date. Fee includes lunch, tea, and conference materials.
+      </p>
+
+      <ol class="reg-steps">
+        <li>
+          <span class="step-num">1</span>
+          <span class="step-text">Make your payment via <strong style="color:var(--rose);">[Paybill/Till number – to add]</strong> using your full name as the reference.</span>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <span class="step-text">Keep the M-Pesa confirmation message you receive.</span>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <span class="step-text">Complete the form below and paste your M-Pesa confirmation message when prompted.</span>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <span class="step-text">Your registration is confirmed once payment is verified.</span>
+        </li>
+      </ol>
+
+      <div style="text-align: center; margin-bottom: 12px;">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3yM4dZcwNvrXBKbg0wwR1UMJ424NYow03Qxd_puwHL2OXHw/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+          <span>Open Registration Form</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+      </div>
+
       <div class="form-slot">
-        <!-- GOOGLE FORM GOES HERE — see chat reply for the exact steps. -->
-        Google Form embed goes here.<br>Paste your Google Form's &lt;iframe&gt; embed code in place of this box.
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf3yM4dZcwNvrXBKbg0wwR1UMJ424NYow03Qxd_puwHL2OXHw/viewform?embedded=true" width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0" style="border:none; width:100%; display:block;">Loading registration form…</iframe>
       </div>
     </div>
   </div>
