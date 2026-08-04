@@ -183,7 +183,7 @@
     border-radius: 50%; display:flex; align-items:center; justify-content:center;
     color: var(--ink-soft); font-size:0.68rem; text-align:center; font-weight:600; flex-shrink:0;
   }
-  .speaker-photo{ width:96px; height:96px; }
+  .speaker-photo{ width:96px; height:96px; border-radius:50%; object-fit:cover; flex-shrink:0; }
   .speaker-name{ font-family:var(--font-display); font-weight:600; color:var(--plum); font-size:1.15rem; margin-bottom:2px; }
   .speaker-role{ color: var(--rose); font-size:0.85rem; font-weight:600; margin-bottom:10px; }
   .speaker-bio{ color:var(--ink-soft); font-size:0.9rem; }
@@ -422,8 +422,7 @@
 
     <div class="speaker-grid">
       <div class="speaker-card">
-        <!-- IMAGE PLACEHOLDER: swap for <img class="speaker-photo" src="..." alt="Vaughan Roberts"> -->
-        <div class="img-placeholder speaker-photo">PHOTO<br>NEEDED</div>
+        <img src="assets/vaughan-roberts.jpg" alt="Vaughan Roberts" class="speaker-photo">
         <div>
           <div class="speaker-name">Vaughan Roberts</div>
           <div class="speaker-role">Rector, St Ebbes Church, Oxford</div>
