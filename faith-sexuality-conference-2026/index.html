@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faith &amp; Sexuality Conference 2026 | FOUND</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* ---- BRAND COLORS — edit these to change the whole page ---- */
+    --plum:      #63284A;   /* deep primary — headers, footer */
+    --rose:      #ce2a60;   /* accent — buttons, links, highlights */
+    --rose-dark: #a91f4d;   /* button hover */
+    --cream:     #FBF3EF;   /* page background */
+    --blush:     #F5E3E9;   /* alternating section background */
+    --ink:       #2A1620;   /* body text */
+    --ink-soft:  #6b4f5b;   /* secondary text */
+    --gold:      #C9A15A;   /* small accent — eyebrows, dividers */
+    --line:      #e6d3da;   /* hairline borders */
+    --white:     #ffffff;
+
+    /* ---- FONTS ---- */
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Poppins', -apple-system, sans-serif;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img{ max-width:100%; display:block; }
+
+  a{ color:inherit; }
+
+  .wrap{ max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  h1,h2,h3{ font-family: var(--font-display); font-weight:600; color: var(--plum); }
+
+  :focus-visible{ outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; scroll-behavior:auto !important; }
+  }
+
+  /* ---------- reveal-on-scroll ---------- */
+  .reveal{ opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.is-visible{ opacity:1; transform: translateY(0); }
+
+  /* ---------- header ---------- */
+  header{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(251,243,239,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; padding: 16px 24px; max-width:1080px; margin:0 auto; }
+  .logo{ display:flex; align-items:center; text-decoration:none; }
+  .logo img{ height: 48px; width: auto; display: block; object-fit: contain; }
+  .nav-menu{ display:flex; align-items:center; gap:22px; list-style:none; }
+  .nav-menu a{
+    color: var(--ink-soft); font-weight:500; font-size:0.88rem;
+    text-decoration:none; transition: color .2s ease, border-color .2s ease;
+    padding: 4px 0; border-bottom: 2px solid transparent;
+  }
+  .nav-menu a:hover{ color: var(--rose); border-bottom-color: var(--rose); }
+  .nav-cta{
+    background: var(--rose); color:var(--white); font-weight:600; font-size:0.9rem;
+    padding: 10px 22px; border-radius: 999px; text-decoration:none;
+    transition: background .2s ease;
+  }
+  .nav-cta:hover{ background: var(--rose-dark); }
+  .btn-secondary{
+    display: inline-block; background: transparent; color: var(--plum);
+    border: 2px solid var(--plum); font-weight: 600; font-size: 0.95rem;
+    padding: 14px 36px; border-radius: 999px; text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .btn-secondary:hover{
+    background: var(--plum); color: var(--white); transform: translateY(-2px);
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding: 84px 0 72px;
+    text-align:center;
+    background:
+      radial-gradient(ellipse at 20% -10%, rgba(206,42,96,0.10), transparent 55%),
+      radial-gradient(ellipse at 90% 10%, rgba(99,40,74,0.10), transparent 50%);
+  }
+  .eyebrow{
+    font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--rose); font-weight:700; margin-bottom: 18px;
+  }
+  .theme-tag{
+    font-family: var(--font-display); font-style: italic; font-weight:500;
+    color: var(--gold); font-size: 1.15rem; margin-bottom: 14px;
+  }
+  .hero-title{
+    font-size: clamp(2.1rem, 5vw, 3.4rem); line-height:1.12; margin-bottom: 22px; max-width: 720px; margin-left:auto; margin-right:auto;
+  }
+  .hero-sub{
+    max-width: 640px; margin: 0 auto 34px; color: var(--ink-soft); font-size: 1.08rem;
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-bottom: 30px;
+  }
+  .meta-pill{
+    display:flex; align-items:center; gap:8px;
+    background: var(--white); border:1px solid var(--line); border-radius: 999px;
+    padding: 10px 18px; font-size:0.88rem; font-weight:600; color: var(--plum);
+  }
+  .meta-pill.soft{ color: var(--ink-soft); font-weight:500; font-style:italic; }
+  .btn-primary{
+    display:inline-block; background: var(--rose); color:var(--white); font-weight:700;
+    font-size:1rem; padding: 16px 40px; border-radius: 999px; text-decoration:none;
+    box-shadow: 0 10px 24px -8px rgba(206,42,96,0.55);
+    transition: transform .2s ease, background .2s ease;
+  }
+  .btn-primary:hover{ background: var(--rose-dark); transform: translateY(-2px); }
+  .hero-note{ margin-top:14px; font-size:0.85rem; color: var(--ink-soft); }
+
+  /* ---------- section shell ---------- */
+  section{ padding: 76px 0; }
+  .section-tint{ background: var(--blush); }
+  .section-head{ text-align:center; max-width: 680px; margin: 0 auto 44px; }
+  .section-eyebrow{ font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; color: var(--rose); font-weight:700; margin-bottom:12px; }
+  .section-title{ font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom:14px; }
+  .section-lede{ color: var(--ink-soft); font-size:1.02rem; }
+
+  /* ---------- why: chunked statements ---------- */
+  .why-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:28px; max-width:980px; margin:0 auto; }
+  .why-card{ background:var(--white); border:1px solid var(--line); border-radius:14px; padding:28px 24px; }
+  .why-card .num{ font-family:var(--font-display); font-style:italic; color:var(--gold); font-size:1.6rem; display:block; margin-bottom:10px; }
+  .why-card h3{ font-size:1.1rem; margin-bottom:10px; }
+  .why-card p{ color:var(--ink-soft); font-size:0.95rem; }
+
+  /* ---------- pull quote (signature element) ---------- */
+  .pull-quote{
+    max-width: 780px; margin: 68px auto 0; padding: 0 24px; text-align:center;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    padding-top: 40px; padding-bottom: 40px;
+  }
+  .pull-quote p{
+    font-family: var(--font-display); font-style: italic; font-weight:500;
+    font-size: clamp(1.3rem, 3vw, 1.9rem); color: var(--plum); line-height:1.35;
+  }
+  .pull-quote span{ display:block; margin-top:14px; font-family:var(--font-body); font-style:normal; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--rose); font-weight:700; }
+
+  /* ---------- questions list ---------- */
+  .q-list{ max-width: 760px; margin: 0 auto; list-style:none; }
+  .q-list li{
+    display:flex; gap:20px; align-items:flex-start;
+    padding: 22px 0; border-bottom: 1px solid var(--line);
+  }
+  .q-list li:last-child{ border-bottom:none; }
+  .q-num{ font-family: var(--font-display); font-weight:600; color: var(--rose); font-size:1.3rem; min-width: 34px; }
+  .q-text{ font-size: 1.05rem; color: var(--plum); font-weight:500; padding-top:2px; }
+
+  /* ---------- card grids ---------- */
+  .card-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:24px; }
+  .card{ background: var(--white); border:1px solid var(--line); border-radius:14px; padding:28px 24px; }
+  .card h3{ font-size:1.08rem; margin-bottom:10px; }
+  .card p{ color:var(--ink-soft); font-size:0.93rem; }
+  .card .icon{ width:42px; height:42px; border-radius:10px; background: var(--blush); color:var(--rose); display:flex; align-items:center; justify-content:center; margin-bottom:16px; font-family:var(--font-display); font-style:italic; font-weight:600; font-size:1.1rem; }
+
+  /* ---------- speakers ---------- */
+  .speaker-grid{ display:grid; grid-template-columns: 1.1fr 1fr; gap:28px; max-width:920px; margin: 0 auto 20px; }
+  .speaker-card{ background:var(--white); border:1px solid var(--line); border-radius:16px; padding:30px; display:flex; gap:22px; align-items:flex-start; }
+  .img-placeholder{
+    background: linear-gradient(135deg, var(--blush), var(--line));
+    border-radius: 50%; display:flex; align-items:center; justify-content:center;
+    color: var(--ink-soft); font-size:0.68rem; text-align:center; font-weight:600; flex-shrink:0;
+  }
+  .speaker-photo{ width:96px; height:96px; }
+  .speaker-name{ font-family:var(--font-display); font-weight:600; color:var(--plum); font-size:1.15rem; margin-bottom:2px; }
+  .speaker-role{ color: var(--rose); font-size:0.85rem; font-weight:600; margin-bottom:10px; }
+  .speaker-bio{ color:var(--ink-soft); font-size:0.9rem; }
+  .partner-note{ text-align:center; color:var(--ink-soft); font-size:0.9rem; font-style:italic; }
+
+  /* ---------- edit-me placeholders ---------- */
+  .edit-me{
+    border: 1.5px dashed var(--rose); border-radius: 12px; padding: 18px 20px;
+    background: rgba(206,42,96,0.05); font-size:0.88rem; color: var(--rose-dark);
+  }
+  .edit-me strong{ display:block; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px; color:var(--rose); }
+  .edit-me ul{ margin: 8px 0 0 18px; color: var(--ink-soft); }
+
+  /* ---------- venue ---------- */
+  .venue-wrap{ max-width: 760px; margin:0 auto; display:grid; gap:18px; }
+  .venue-options{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:6px; }
+  .venue-chip{ background:var(--white); border:1px solid var(--line); border-radius:999px; padding:8px 16px; font-size:0.85rem; color:var(--ink-soft); }
+
+  /* ---------- registration ---------- */
+  .reg-wrap{ max-width: 760px; margin:0 auto; display:grid; gap:22px; }
+  .reg-facts{ display:grid; grid-template-columns: repeat(3,1fr); gap:16px; }
+  .reg-fact{ background:var(--white); border:1px solid var(--line); border-radius:12px; padding:18px; text-align:center; }
+  .reg-fact .label{ font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--rose); font-weight:700; margin-bottom:6px; }
+  .reg-fact .value{ font-family:var(--font-display); color:var(--plum); font-size:1.1rem; }
+  .form-slot{
+    border: 2px dashed var(--gold); border-radius:16px; padding: 40px 24px; text-align:center;
+    background: var(--white); color: var(--ink-soft); font-size:0.9rem;
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  .faq-wrap{ max-width: 760px; margin:0 auto; }
+  .faq-item{ border-bottom:1px solid var(--line); }
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    padding: 20px 4px; display:flex; justify-content:space-between; align-items:center; gap:16px;
+    font-family: var(--font-body); font-weight:600; color: var(--plum); font-size:1rem;
+  }
+  .faq-q .plus{ font-family: var(--font-display); font-size:1.4rem; color:var(--rose); transition: transform .25s ease; flex-shrink:0; }
+  .faq-item.open .faq-q .plus{ transform: rotate(45deg); }
+  .faq-a{ max-height:0; overflow:hidden; transition: max-height .3s ease; }
+  .faq-item.open .faq-a{ max-height: 300px; }
+  .faq-a p{ padding: 0 4px 20px; color: var(--ink-soft); font-size:0.93rem; }
+
+  /* ---------- final CTA ---------- */
+  .final-cta{ text-align:center; background: var(--plum); color: var(--white); padding: 80px 24px; }
+  .final-cta h2{ color:var(--white); font-size:clamp(1.6rem,3.5vw,2.3rem); margin-bottom:14px; }
+  .final-cta p{ color: #e8d3dc; max-width:520px; margin:0 auto 30px; }
+  .btn-light{ display:inline-block; background:var(--white); color:var(--plum); font-weight:700; padding:16px 40px; border-radius:999px; text-decoration:none; }
+  .btn-light:hover{ background: var(--blush); }
+
+  /* ---------- footer ---------- */
+  footer{ background: var(--ink); color:#cbb3bd; padding: 48px 24px 28px; }
+  .footer-inner{ max-width:1080px; margin:0 auto; display:grid; grid-template-columns: 1.3fr 1fr; gap:32px; }
+  .footer-inner h4{ color:var(--white); font-family:var(--font-display); font-weight:500; margin-bottom:12px; }
+  .footer-contacts{ list-style:none; font-size:0.9rem; display:grid; gap:8px; }
+  .footer-back-link{
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 14px;
+    color: var(--rose); font-size: 0.88rem; font-weight: 600;
+    text-decoration: none; transition: color 0.2s ease;
+  }
+  .footer-back-link:hover{ color: var(--white); text-decoration: underline; }
+  .footer-bottom{ max-width:1080px; margin: 34px auto 0; padding-top:20px; border-top:1px solid #4a2c39; font-size:0.78rem; color:#9c7f89; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px){
+    .nav-menu{ display: none; }
+  }
+  @media (max-width: 760px){
+    .why-grid, .card-grid{ grid-template-columns: 1fr; }
+    .speaker-grid{ grid-template-columns: 1fr; }
+    .reg-facts{ grid-template-columns: 1fr; }
+    section{ padding:56px 0; }
+    .hero{ padding: 56px 0 48px; }
+    .speaker-card{ flex-direction:column; text-align:center; }
+    .speaker-card .speaker-photo{ margin:0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo" aria-label="FOUND Home">
+      <img src="assets/logo.png" alt="FOUND" class="logo-img">
+    </a>
+    <nav class="nav-menu" aria-label="Main Navigation">
+      <a href="#why">Why Attend</a>
+      <a href="#gain">Benefits</a>
+      <a href="#attend">Who Should Attend</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#venue">Venue</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#register" class="nav-cta">Register</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">FOUND · Faith &amp; Sexuality Conference</div>
+    <div class="theme-tag">"Full of Grace and Truth"</div>
+    <h1 class="hero-title">Faith &amp; Sexuality Conference 2026</h1>
+    <p class="hero-sub">A one-day conference exploring faith, sexuality, and identity from a biblical perspective — equipping individuals, churches, and families to engage these conversations with truth, grace, and pastoral wisdom.</p>
+
+    <div class="meta-row">
+      <div class="meta-pill">📅 Saturday, 26 September 2026</div>
+      <div class="meta-pill soft">📍 Venue: To be announced soon</div>
+      <div class="meta-pill">🕘 8:00 AM – 4:00 PM</div>
+    </div>
+
+    <a href="#register" class="btn-primary">Reserve Your Seat</a>
+    <div class="hero-note">Registration required · places are limited</div>
+  </div>
+</section>
+
+<!-- ============ WHY THIS CONFERENCE ============ -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Why This Conference</div>
+      <h2 class="section-title">A conversation the Church can't sit out</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="num">1</span>
+        <h3>The Reality</h3>
+        <p>Across Kenya and the continent, questions of same-sex attraction and gender identity are reaching every church, family, school, and workplace — whether we've prepared for them or not.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">2</span>
+        <h3>The Need</h3>
+        <p>Many believers are quietly wrestling with these questions. Pastors, parents, and leaders are asking how to respond with conviction and compassion at once — not one instead of the other.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">3</span>
+        <h3>The Response</h3>
+        <p>This conference exists so the Church doesn't look away. Through careful biblical teaching and honest conversation, we want every participant to leave equipped to think biblically, love faithfully, and engage with wisdom.</p>
+      </div>
+    </div>
+
+    <div class="pull-quote reveal">
+      <p>"What should I do if my child comes out to me as gay?"</p>
+      <span>One of the questions we'll answer together</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUESTIONS WE'LL WRESTLE WITH ============ -->
+<section class="section-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">What We'll Cover</div>
+      <h2 class="section-title">The questions we'll wrestle with</h2>
+      <p class="section-lede">Five questions shaping the day's teaching and discussion.</p>
+    </div>
+
+    <ol class="q-list">
+      <li><span class="q-num">01</span><span class="q-text">What is God's design and vision for human sexuality?</span></li>
+      <li><span class="q-num">02</span><span class="q-text">Can a Christian wrestle with same-sex attraction or gender dysphoria?</span></li>
+      <li><span class="q-num">03</span><span class="q-text">How can Christians uphold truth and grace when engaging with those experiencing sexual brokenness?</span></li>
+      <li><span class="q-num">04</span><span class="q-text">What should I do if my child comes out to me as gay?</span></li>
+      <li><span class="q-num">05</span><span class="q-text">How should Christians engage with the LGBT community?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU'LL GAIN ============ -->
+<section id="gain">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">What You'll Gain</div>
+      <h2 class="section-title">Knowledge, wisdom, and practical tools</h2>
+    </div>
+
+    <div class="card-grid">
+      <div class="card"><div class="icon">B</div><h3>Biblical Clarity</h3><p>A deeper understanding of what Scripture teaches about faith, sexuality, identity, and Christian discipleship.</p></div>
+      <div class="card"><div class="icon">P</div><h3>Pastoral Wisdom</h3><p>How to respond to complex questions with both biblical conviction and genuine compassion.</p></div>
+      <div class="card"><div class="icon">G</div><h3>Practical Guidance</h3><p>Approaches for ministry, discipleship, parenting, and personal Christian living today.</p></div>
+      <div class="card"><div class="icon">T</div><h3>Thoughtful Conversation</h3><p>Time with experienced speakers and fellow participants through teaching, panels, and Q&amp;A.</p></div>
+      <div class="card"><div class="icon">R</div><h3>Ministry Resources</h3><p>Recommended books, articles, and resources to support learning beyond the conference.</p></div>
+      <div class="card"><div class="icon">C</div><h3>Meaningful Connections</h3><p>Meet church leaders, ministry workers, parents, and others committed to this conversation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO SHOULD ATTEND ============ -->
+<section class="section-tint" id="attend">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Who Should Attend</div>
+      <h2 class="section-title">Designed with you in mind</h2>
+    </div>
+
+    <div class="card-grid">
+      <div class="card"><h3>Individuals Navigating SSA or Gender Dysphoria</h3><p>For those seeking to understand these experiences in light of Scripture while growing in faith.</p></div>
+      <div class="card"><h3>Church Leaders</h3><p>Pastors, elders, youth leaders, ministry leaders, and counsellors shepherding God's people through this conversation.</p></div>
+      <div class="card"><h3>Christian Organizations</h3><p>Ministries working with young people, students, families, or communities wanting to strengthen their understanding.</p></div>
+      <div class="card"><h3>Parents &amp; Guardians</h3><p>Seeking biblical wisdom and practical support for a child or loved one navigating these questions.</p></div>
+      <div class="card"><h3>Students &amp; Young Adults</h3><p>University students and young professionals engaging thoughtfully with faith and identity today.</p></div>
+      <div class="card"><h3>Anyone Open to Learning</h3><p>Christians and non-Christians willing to listen, learn, and engage respectfully.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPEAKERS ============ -->
+<section id="speakers">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Speakers</div>
+      <h2 class="section-title">Learning from proven pastoral voices</h2>
+    </div>
+
+    <div class="speaker-grid">
+      <div class="speaker-card">
+        <!-- IMAGE PLACEHOLDER: swap for <img class="speaker-photo" src="..." alt="Vaughan Roberts"> -->
+        <div class="img-placeholder speaker-photo">PHOTO<br>NEEDED</div>
+        <div>
+          <div class="speaker-name">Vaughan Roberts</div>
+          <div class="speaker-role">Rector, St Ebbes Church, Oxford</div>
+          <p class="speaker-bio">Author of several books including <em>God's Big Picture</em>, <em>Life's Big Questions</em>, and <em>Battles Christians Face</em>. Main speaker for the day's teaching sessions.</p>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="img-placeholder speaker-photo" style="width:72px; height:72px; border-radius:50%; background:var(--blush); font-size:1.2rem;">🎤</div>
+        <div>
+          <div class="speaker-name">Other Panelists</div>
+          <div class="speaker-role">To Be Announced Soon</div>
+          <p class="speaker-bio">Additional guest panelists and ministry leaders will be announced soon. Check back for updates on confirmed panel speakers.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="partner-note">Held in partnership with Injili Africa.</p>
+  </div>
+</section>
+
+<!-- ============ VENUE ============ -->
+<section class="section-tint" id="venue">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Venue</div>
+      <h2 class="section-title">Where we'll gather</h2>
+    </div>
+
+    <div class="venue-wrap">
+      <div class="card" style="text-align:center; padding:36px 24px;">
+        <div style="font-size:2rem; margin-bottom:12px;">📍</div>
+        <h3 style="font-size:1.25rem; color:var(--plum); margin-bottom:8px;">Venue: To Be Announced Soon</h3>
+        <p style="color:var(--ink-soft); font-size:0.95rem; max-width:540px; margin:0 auto 16px;">
+          The conference location in Nairobi is being finalized and will be officially announced soon. Registered participants will also receive venue details and directions via email.
+        </p>
+        <div class="venue-options" style="justify-content:center; opacity:0.85;">
+          <span style="font-size:0.8rem; color:var(--ink-soft); margin-right:6px; font-weight:500;">Possible venues under consideration:</span>
+          <span class="venue-chip">Ufungamano</span>
+          <span class="venue-chip">All Saints</span>
+          <span class="venue-chip">iServe Africa Guest House</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REGISTRATION ============ -->
+<section id="register">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Registration</div>
+      <h2 class="section-title">Reserve your seat</h2>
+      <p class="section-lede">Registration is required and places are limited.</p>
+    </div>
+
+    <div class="reg-wrap">
+      <div class="reg-facts">
+        <div class="reg-fact">
+          <div class="label">Registration Fee</div>
+          <div class="value" style="font-size:1rem; line-height:1.4;">
+            <strong>KSh 1,000</strong> <span style="font-size:0.82rem; color:var(--ink-soft); font-family:var(--font-body);">(Adults)</span><br>
+            <strong>KSh 500</strong> <span style="font-size:0.82rem; color:var(--ink-soft); font-family:var(--font-body);">(Students)</span>
+          </div>
+        </div>
+        <div class="reg-fact">
+          <div class="label">Date &amp; Time</div>
+          <div class="value" style="font-size:0.95rem; line-height:1.4;">
+            <strong>26th September 2026</strong><br>
+            <span style="font-size:0.85rem; color:var(--ink-soft); font-family:var(--font-body);">8:00 AM – 4:00 PM</span>
+          </div>
+        </div>
+        <div class="reg-fact">
+          <div class="label">Includes</div>
+          <div class="value" style="font-size:0.95rem;">Lunch, tea &amp; conference materials</div>
+        </div>
+      </div>
+
+      <div class="form-slot">
+        <!-- GOOGLE FORM GOES HERE — see chat reply for the exact steps. -->
+        Google Form embed goes here.<br>Paste your Google Form's &lt;iframe&gt; embed code in place of this box.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section-tint" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-title">Frequently asked questions</h2>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-q">Is this conference only for Christians?<span class="plus">+</span></button>
+        <div class="faq-a"><p>No. While the conference approaches these questions from a biblical perspective, anyone willing to engage respectfully is welcome to attend.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do I need to register?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. Registration is required for all participants to assist with planning, seating, and conference materials.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will there be opportunities to ask questions?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. The programme includes designated discussion sessions for participants to ask questions and engage with speakers.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will my information remain confidential?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Information collected at registration is used solely for conference administration and communication, and will not be shared with third parties without your consent, except where required by law.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will meals be provided?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Details on refreshments and meals will be communicated to registered participants before the conference.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I transfer my registration to someone else?<span class="plus">+</span></button>
+        <div class="faq-a"><p>If you're unable to attend after registering, contact the organizing team as early as possible so arrangements can be made.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How can I stay informed about updates?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Updates will be shared by email and through FOUND's official channels. Registered participants receive announcements directly.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How can I contact the organizing team?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Reach us using the contact details below, or through FOUND's official social media platforms.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BACK TO MAIN SITE ============ -->
+<section class="section-tint" id="main-site">
+  <div class="wrap" style="text-align: center;">
+    <div class="section-eyebrow">FOUND Ministry</div>
+    <h2 class="section-title">Want to explore more from FOUND?</h2>
+    <p class="section-lede" style="max-width: 580px; margin: 0 auto 28px;">
+      Discover our ongoing pastoral resources, ministry programs, publications, and upcoming events across Kenya.
+    </p>
+    <a href="https://foundafric.org/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+      Back to main site &rarr;
+    </a>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<div class="final-cta">
+  <h2>Join us for a day of grace and truth.</h2>
+  <p>Places are limited — reserve your seat before registration closes.</p>
+  <a href="#register" class="btn-light">Reserve Your Seat</a>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img src="assets/logo.png" alt="FOUND" style="height: 42px; width: auto; margin-bottom: 12px; display: block;">
+      <p style="font-size:0.88rem; max-width:340px;">A ministry serving churches and families across Kenya with pastoral support, training, and public engagement.</p>
+      <a href="https://foundafric.org/" target="_blank" rel="noopener noreferrer" class="footer-back-link">
+        &larr; Back to main site
+      </a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-contacts edit-me" style="border-color:#7a4f5f; color:#cbb3bd; background:none;">
+        <li>Phone: add phone number</li>
+        <li>Email: add email address</li>
+        <li>Website: foundafric.org</li>
+        <li>Social: add handles</li>
+        <li>WhatsApp: add number</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">Copyright © 2026 FOUND. All rights reserved.</div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', function(){
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(open){ open.classList.remove('open'); });
+      if(!wasOpen){ item.classList.add('open'); }
+    });
+  });
+
+  // Reveal on scroll
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+
+</body>
+</html>
