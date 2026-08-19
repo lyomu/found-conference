@@ -4,7 +4,7 @@ Official landing page and registration portal for the **Faith & Sexuality Confer
 
 ---
 
-## 🌟 Overview
+## Overview
 
 The **Faith & Sexuality Conference 2026** is a dedicated gathering exploring Biblical truth, pastoral wisdom, and compassionate ministry surrounding faith and human sexuality.
 
@@ -12,7 +12,7 @@ This repository contains the static web pages, design assets, and conversion tra
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 ├── index.html                           # Main conference landing page
@@ -24,7 +24,7 @@ This repository contains the static web pages, design assets, and conversion tra
 
 ---
 
-## 🚀 Features
+## Features
 
 - **Modern & Responsive Design**: Crafted with clean semantic HTML5 and vanilla CSS with fluid typography and smooth scroll animations.
 - **Conversion Tracking**:
@@ -35,7 +35,7 @@ This repository contains the static web pages, design assets, and conversion tra
 
 ---
 
-## 🛠️ Local Development & Preview
+## Local Development & Preview
 
 To preview the landing page locally:
 
@@ -55,6 +55,6 @@ To preview the landing page locally:
 
 ---
 
-## 📄 License
+## License
 
 © 2026 FOUND Africa. All rights reserved.
